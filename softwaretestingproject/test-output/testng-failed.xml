@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="6" parallel="tests" name="Failed suite [Adhoc]" guice-stage="DEVELOPMENT">
+  <parameter name="Wbsites" value="https://www.facebook.com"/>
+  <test thread-count="6" parallel="tests" name="functionsofchrome(failed)">
+    <parameter name="URI" value="Chrome"/>
+    <groups>
+      <run>
+        <include name="Functionaltesting"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="AmazonRgressionSteps.Amazonofsign">
+        <methods>
+          <include name="f"/>
+        </methods>
+      </class> <!-- AmazonRgressionSteps.Amazonofsign -->
+    </classes>
+  </test> <!-- functionsofchrome(failed) -->
+</suite> <!-- Failed suite [Adhoc] -->
