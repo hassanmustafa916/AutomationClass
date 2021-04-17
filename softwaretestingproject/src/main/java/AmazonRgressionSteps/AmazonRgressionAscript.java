@@ -36,6 +36,7 @@ public class AmazonRgressionAscript extends Rusables {
 	  sign.CreationOfAccountClick();
 	  Create create=new Create(driver);
 	  create.CustomerFieldCharacters("Haroon");
+	  //This to push the changes
 	  create.Email("Rsr.Niaz@gmail.com");
 	 // shots();
 	  create.Psswd("Haroon");
