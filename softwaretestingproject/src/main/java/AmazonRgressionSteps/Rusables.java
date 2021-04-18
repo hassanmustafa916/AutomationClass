@@ -18,21 +18,24 @@ import org.testng.annotations.Parameters;
 
 public class Rusables {
 	public WebDriver driver;
+	String Path=  System.getProperty("user.dir");
 	  @BeforeClass
 	  @Parameters({"URI","Wbsites"})
 	  public void browsers(String browser,String Wbsite) {
+		//String Path=  System.getProperty("user.dir");
+		System.out.println(Path);
 			if(browser.equalsIgnoreCase("Chrome")) {
-				System.setProperty("webdriver.chrome.driver", "C:\\Users\\MUHAMMAD Shahbaz Sal\\Downloads\\CodingOfWeekend-20210410T031739Z-001\\CodingOfWeekend\\softwaretestingproject\\Drivers\\chromedriver.exe");
+				System.setProperty("webdriver.chrome.driver", Path+"\\Drivers\\chromedriver.exe");
 			     driver=new ChromeDriver();
 				 driver.get(Wbsite);
 			     driver.manage().window().maximize();
 			}else if (browser.equalsIgnoreCase("firefox")) {
-				System.setProperty("webdriver.gecko.driver", "C:\\Users\\MUHAMMAD Shahbaz Sal\\Downloads\\CodingOfWeekend-20210410T031739Z-001\\CodingOfWeekend\\softwaretestingproject\\Drivers\\geckodriver.exe");
+				System.setProperty("webdriver.gecko.driver", Path+"\\Drivers\\geckodriver.exe");
 				driver=new FirefoxDriver();
 				driver.get(Wbsite);
 			    driver.manage().window().maximize();
 			}else if(browser.equalsIgnoreCase("Edge")) {
-				System.setProperty("webdriver.edge.driver", "C:\\Users\\MUHAMMAD Shahbaz Sal\\Downloads\\CodingOfWeekend-20210410T031739Z-001\\CodingOfWeekend\\softwaretestingproject\\Drivers\\msedgedriver.exe");
+				System.setProperty("webdriver.edge.driver", Path+"\\Drivers\\msedgedriver.exe");
 				driver=new EdgeDriver();
 				driver.get(Wbsite);
 				driver.manage().window().maximize();
@@ -51,7 +54,7 @@ public class Rusables {
 			String si=dt.toString().replace(" ", "_").replace(":", "_");
 			System.out.println(si);
 			File capture=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			FileHandler.copy(capture,new File("C:\\Users\\MUHAMMAD Shahbaz Sal\\Downloads\\CodingOfWeekend-20210410T031739Z-001\\CodingOfWeekend\\softwaretestingproject\\Pictures\\"+folder+"\\"+si+"Picture.png"));
+			FileHandler.copy(capture,new File(Path+"\\Pictures\\"+folder+"\\"+si+"Picture.png"));
 		  
 		}
 }

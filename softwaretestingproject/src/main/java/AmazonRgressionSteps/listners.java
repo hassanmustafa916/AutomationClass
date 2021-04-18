@@ -14,7 +14,7 @@ import org.testng.ITestResult;
 //import Comons.Utilbase;
 
 public class listners extends Rusables implements ITestListener {
-
+	String Path=  System.getProperty("user.dir");
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
 		System.out.println("Test is started");
@@ -30,7 +30,7 @@ public class listners extends Rusables implements ITestListener {
 		System.out.println(si);
 		File capture=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
-			FileHandler.copy(capture,new File("C:\\Users\\MUHAMMAD Shahbaz Sal\\Downloads\\CodingOfWeekend-20210410T031739Z-001\\CodingOfWeekend\\softwaretestingproject\\Pictures\\Passed\\"+si+"Picture.png"));
+			FileHandler.copy(capture,new File(Path+"\\Pictures\\Passed\\"+si+"Picture.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -48,7 +48,7 @@ public class listners extends Rusables implements ITestListener {
 		System.out.println(si);
 		File capture=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
-			FileHandler.copy(capture,new File("C:\\Users\\MUHAMMAD Shahbaz Sal\\Downloads\\CodingOfWeekend-20210410T031739Z-001\\CodingOfWeekend\\softwaretestingproject\\Pictures\\Failed\\"+si+"Picture.png"));
+			FileHandler.copy(capture,new File(Path+"\\Pictures\\Failed\\"+si+"Picture.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
